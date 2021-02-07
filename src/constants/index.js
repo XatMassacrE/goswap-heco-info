@@ -11,7 +11,7 @@ export const timeframeOptions = {
 
 // token list urls to fetch tokens from - use for warnings on tokens and pairs
 export const SUPPORTED_LIST_URLS__NO_ENS = [
-  'https://raw.githubusercontent.com/pancakeswap/pancake-swap-interface/master/src/constants/token/pancakeswap.json'
+  'https://unpkg.com/goswap-tokenlist@latest/tokenlist.json'
 ]
 
 // hide from overview list
