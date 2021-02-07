@@ -430,10 +430,10 @@ export const Search = ({ small = false }) => {
               : below410
                 ? 'Search...'
                 : below470
-                  ? 'Search Gosave...'
+                  ? 'Search GoSwap...'
                   : below700
                     ? 'Search pairs and tokens...'
-                    : 'Search Gosave pairs and tokens...'
+                    : 'Search GoSwap pairs and tokens...'
           }
           value={value}
           onChange={e => {
