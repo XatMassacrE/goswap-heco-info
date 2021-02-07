@@ -1,6 +1,6 @@
 {
-  "short_name": "Unisave Info",
-  "name": "View statistics for unisave exchanges.",
+  "short_name": "Gosave Info",
+  "name": "View statistics for gosave exchanges.",
   "icons": [
     {
       "src": "favicon.ico",
