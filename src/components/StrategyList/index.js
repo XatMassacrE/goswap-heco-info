@@ -45,7 +45,7 @@ function StrategyListItem({ item, index, color, disbaleLinks }) {
       )}
       <DataText area="name" fontWeight="500">
         <TokenLogo address={item.uToken} size={below600 ? 16 : 20} />
-        <Link style={{ marginLeft: '20px', whiteSpace: 'nowrap' }} color={color} external href={'https://scan.hecochain.com//address/' + item.uToken}>
+        <Link style={{ marginLeft: '20px', whiteSpace: 'nowrap' }} color={color} external href={'https://scan.hecochain.com/address/' + item.uToken}>
           <FormattedName
             text={item.uTokenSymbol}
             maxCharacters={below600 ? 8 : 16}
@@ -56,7 +56,7 @@ function StrategyListItem({ item, index, color, disbaleLinks }) {
       </DataText>
       <DataText area="name" fontWeight="500">
         <TokenLogo address={item.yToken} size={below600 ? 16 : 20} />
-        <Link style={{ marginLeft: '20px', whiteSpace: 'nowrap' }} color={color} external href={'https://scan.hecochain.com//address/' + item.yToken}>
+        <Link style={{ marginLeft: '20px', whiteSpace: 'nowrap' }} color={color} external href={'https://scan.hecochain.com/address/' + item.yToken}>
           <FormattedName
             text={item.yTokenSymbol}
             maxCharacters={below600 ? 8 : 16}

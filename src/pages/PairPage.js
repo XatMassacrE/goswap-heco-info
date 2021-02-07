@@ -484,7 +484,7 @@ function PairPage({ pairAddress, history }) {
                     </TYPE.main>
                   </Column>
                   <ButtonLight color={backgroundColor}>
-                    <Link color={backgroundColor} external href={'https://scan.hecochain.com//address/' + pairAddress}>
+                    <Link color={backgroundColor} external href={'https://scan.hecochain.com/address/' + pairAddress}>
                       View on HecoScan ↗
                     </Link>
                   </ButtonLight>
