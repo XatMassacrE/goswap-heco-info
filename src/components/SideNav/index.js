@@ -168,8 +168,8 @@ function SideNav({ history }) {
           </AutoColumn>
           <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
             <HeaderText>
-              <Link href="https://app.unisave.exchange/#/swap" target="_blank">
-                Unisave
+              <Link href="https://goswap.app/#/swap" target="_blank">
+                Gosave
               </Link>
             </HeaderText>
             {/* <HeaderText>
@@ -178,7 +178,7 @@ function SideNav({ history }) {
               </Link>
             </HeaderText> */}
             <HeaderText>
-              <Link href="https://twitter.com/UnisaveProtocol" target="_blank">
+              <Link href="https://twitter.com/GoSwapio" target="_blank">
                 Twitter
               </Link>
             </HeaderText>
@@ -196,10 +196,10 @@ function SideNav({ history }) {
           )}
         </DesktopWrapper>
       ) : (
-        <MobileWrapper>
-          <Title />
-        </MobileWrapper>
-      )}
+          <MobileWrapper>
+            <Title />
+          </MobileWrapper>
+        )}
     </Wrapper>
   )
 }

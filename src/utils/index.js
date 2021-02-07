@@ -72,9 +72,9 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
 
 export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
-    return `https://app.unisave.exchange/#/swap?inputCurrency=${token0Address}`
+    return `https://goswap.app/#/swap?inputCurrency=${token0Address}`
   } else {
-    return `https://app.unisave.exchange/#/swap?inputCurrency=${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token0Address
+    return `https://goswap.app/#/swap?inputCurrency=${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token0Address
       }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token1Address}`
   }
 }
