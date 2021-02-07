@@ -1,8 +1,8 @@
 {
-  "name": "uniscam-info",
+  "name": "goswap-info",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goswap.app/#/swap/",
+  "homepage": ".",
   "dependencies": {
     "@popperjs/core": "^2.4.2",
     "@reach/portal": "^0.10.3",
