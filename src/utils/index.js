@@ -56,15 +56,15 @@ export function getTimeframe(timeWindow) {
 export function getPoolLink(token0Address, token1Address = null, remove = false) {
   if (!token1Address) {
     return (
-      `https://swap.y3d.finance/#/` +
+      `https://goswap.app/#/` +
       (remove ? `remove` : `add`) +
-      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token0Address}/${'CURRENCY'}`
+      `/${token0Address === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f' ? 'CURRENCY' : token0Address}/${'CURRENCY'}`
     )
   } else {
     return (
-      `https://swap.y3d.finance/#/` +
+      `https://goswap.app/#/` +
       (remove ? `remove` : `add`) +
-      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token0Address}/${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token1Address
+      `/${token0Address === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f' ? 'CURRENCY' : token0Address}/${token1Address === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f' ? 'CURRENCY' : token1Address
       }`
     )
   }
@@ -74,8 +74,8 @@ export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
     return `https://goswap.app/#/swap?inputCurrency=${token0Address}`
   } else {
-    return `https://goswap.app/#/swap?inputCurrency=${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token0Address
-      }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'CURRENCY' : token1Address}`
+    return `https://goswap.app/#/swap?inputCurrency=${token0Address === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f' ? 'CURRENCY' : token0Address
+      }&outputCurrency=${token1Address === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f' ? 'CURRENCY' : token1Address}`
   }
 }
 

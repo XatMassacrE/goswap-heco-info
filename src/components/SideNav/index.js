@@ -168,7 +168,7 @@ function SideNav({ history }) {
           </AutoColumn>
           <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
             <HeaderText>
-              <Link href="https://goswap.app/#/swap" target="_blank">
+              <Link href="https://goswap.app/" target="_blank">
                 Gosave
               </Link>
             </HeaderText>

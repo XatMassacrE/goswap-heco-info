@@ -2,16 +2,16 @@ import React from 'react'
 
 const Attribution = () => (
   <p className="attribution">
-    <a href="https://github.com/Uniscam/uniscam-bsc-info" rel="noopener noreferrer" target="_blank">
+    <a href="https://github.com/go-protocol/goswap-heco-info" rel="noopener noreferrer" target="_blank">
       Github
     </a>{' '}
     |{' '}
-    <a href="https://uniscam.io" rel="noopener noreferrer" target="_blank">
-      Uniscam
+    <a href="https://goswap.app" rel="noopener noreferrer" target="_blank">
+      GoSwap
     </a>{' '}
     |{' '}
-    <a href="https://gifer.com/en/1Atv" rel="noopener noreferrer" target="_blank">
-      GIF
+    <a href="https://cash.goswap.app" rel="noopener noreferrer" target="_blank">
+      GoCash
     </a>
   </p>
 )
