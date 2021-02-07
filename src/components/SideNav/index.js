@@ -157,12 +157,12 @@ function SideNav({ history }) {
                     Accounts
                   </Option>
                 </BasicLink>
-                <BasicLink to="/strategy">
+                {/* <BasicLink to="/strategy">
                   <Option activeText={history.location.pathname === '/strategy' ?? undefined}>
                     <Clock size={20} style={{ marginRight: '.75rem' }} />
                     Strategy
                   </Option>
-                </BasicLink>
+                </BasicLink> */}
               </AutoColumn>
             )}
           </AutoColumn>
