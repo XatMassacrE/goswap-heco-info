@@ -2,16 +2,16 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 import { shade } from 'polished'
 import Vibrant from 'node-vibrant'
 import { hex } from 'wcag-contrast'
-import { isAddress } from '../utils'
+import { isAddress } from '../utils/index.js'
 import copy from 'copy-to-clipboard'
 import { APY_TYPE_LIST } from '../constants'
 
 export function useColor(tokenAddress, token) {
   const [color, setColor] = useState('#2172E5')
   if (tokenAddress) {
-    const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
+    const path = `https://raw.githubusercontent.com/go-protocol/goswap-tokenlist/main/assets/HECOMAIN/${isAddress(
       tokenAddress
-    )}/logo.png`
+    )}.png`
     if (path) {
       Vibrant.from(path).getPalette((err, palette) => {
         if (palette && palette.Vibrant) {

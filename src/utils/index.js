@@ -285,11 +285,11 @@ export function getTimestampRange(timestamp_from, period_length, periods) {
   return timestamps
 }
 
-export const toNiceDateYear = date => dayjs.utc(dayjs.unix(date)).format('MMMM DD, YYYY')
+export const toNiceDateYear = date => dayjs.utc(dayjs.unix(date)).format('YYYY-MMMM-DD')
 
 export const isAddress = value => {
   try {
-    return ethers.utils.getAddress(value.toLowerCase())
+    return ethers.utils.getAddress(value.toLowerCase()).toLowerCase()
   } catch {
     return false
   }
@@ -304,10 +304,10 @@ export const setThemeColor = theme => document.documentElement.style.setProperty
 export const Big = number => new BigNumber(number)
 
 export const urls = {
-  showTransaction: tx => `https://bscscan.com/tx/${tx}/`,
-  showAddress: address => `https://www.etherscan.io/address/${address}/`,
-  showToken: address => `https://www.etherscan.io/token/${address}/`,
-  showBlock: block => `https://bscscan.com/block/${block}/`
+  showTransaction: tx => `https://scan.hecochain.com//tx/${tx}/`,
+  showAddress: address => `https://scan.hecochain.com//address/${address}/`,
+  showToken: address => `https://scan.hecochain.com//token/${address}/`,
+  showBlock: block => `https://scan.hecochain.com//block/${block}/`
 }
 
 export const formatTime = unix => {
