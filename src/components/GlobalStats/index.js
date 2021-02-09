@@ -48,24 +48,24 @@ export default function GlobalStats() {
               }}
               style={{ position: 'relative' }}
             >
-              HT Price: <Medium>{formattedEthPrice}</Medium>
+              HT价格: <Medium>{formattedEthPrice}</Medium>
               {/* {showPriceCard && <UniPrice />} */}
             </TYPE.main>
           )}
 
           {!below1180 && (
             <TYPE.main mr={'1rem'}>
-              Transactions (24H): <Medium>{localNumber(oneDayTxns)}</Medium>
+              交易笔数 (24小时): <Medium>{localNumber(oneDayTxns)}</Medium>
             </TYPE.main>
           )}
           {!below1024 && (
             <TYPE.main mr={'1rem'}>
-              Pairs: <Medium>{localNumber(pairCount)}</Medium>
+              交易对: <Medium>{localNumber(pairCount)}</Medium>
             </TYPE.main>
           )}
           {!below1295 && (
             <TYPE.main mr={'1rem'}>
-              Fees (24H): <Medium>{oneDayFees}</Medium>&nbsp;
+              手续费收益 (24小时): <Medium>{oneDayFees}</Medium>&nbsp;
             </TYPE.main>
           )}
         </RowFixed>

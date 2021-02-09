@@ -320,13 +320,13 @@ export const formatTime = unix => {
   const inDays = now.diff(timestamp, 'day')
 
   if (inHours >= 24) {
-    return `${inDays} ${inDays === 1 ? 'day' : 'days'} ago`
+    return `${inDays} ${inDays === 1 ? '天' : '天'}前`
   } else if (inMinutes >= 60) {
-    return `${inHours} ${inHours === 1 ? 'hour' : 'hours'} ago`
+    return `${inHours} ${inHours === 1 ? '小时' : '小时'}前`
   } else if (inSeconds >= 60) {
-    return `${inMinutes} ${inMinutes === 1 ? 'minute' : 'minutes'} ago`
+    return `${inMinutes} ${inMinutes === 1 ? '分钟' : '分钟'}前`
   } else {
-    return `${inSeconds} ${inSeconds === 1 ? 'second' : 'seconds'} ago`
+    return `${inSeconds} ${inSeconds === 1 ? '秒' : '秒'}前`
   }
 }
 

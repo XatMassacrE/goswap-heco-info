@@ -37,8 +37,7 @@ const Wrapper = styled.div`
   justify-content: flex-end;
   padding: 12px 16px;
   border-radius: 12px;
-  background: ${({ theme, small, open }) =>
-    small ? (open ? transparentize(0.4, theme.bg1) : 'none') : transparentize(0.4, theme.bg6)};
+  background: ${({ theme }) => theme.bg6};
   border-bottom-right-radius: ${({ open }) => (open ? '0px' : '12px')};
   border-bottom-left-radius: ${({ open }) => (open ? '0px' : '12px')};
   z-index: 9999;
@@ -111,6 +110,7 @@ const Menu = styled.div`
   top: 50px;
   max-height: 540px;
   // overflow: scroll;
+  display: inline-table;
   left: 0;
   padding-bottom: 20px;
   background: ${({ theme }) => theme.bg6};
@@ -428,12 +428,12 @@ export const Search = ({ small = false }) => {
             small
               ? ''
               : below410
-                ? 'Search...'
+                ? '搜索...'
                 : below470
-                  ? 'Search GoSwap...'
+                  ? '搜索 GoSwap...'
                   : below700
-                    ? 'Search pairs and tokens...'
-                    : 'Search GoSwap pairs and tokens...'
+                    ? '搜索交易对或令牌...'
+                    : '搜索GoSwap交易对或令牌...'
           }
           value={value}
           onChange={e => {
@@ -449,30 +449,30 @@ export const Search = ({ small = false }) => {
       </Wrapper>
       <Menu hide={!showMenu} ref={menuRef}>
         <Heading>
-          <Gray>Pairs</Gray>
+          <Gray>交易对</Gray>
         </Heading>
         <div>
           {filteredPairList && Object.keys(filteredPairList).length === 0 && (
             <MenuItem>
-              <TYPE.body>No results</TYPE.body>
+              <TYPE.body>没有找到</TYPE.body>
             </MenuItem>
           )}
           {filteredPairList &&
             filteredPairList.slice(0, pairsShown).map(pair => {
               if (pair?.token0?.id === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f') {
-                pair.token0.name = 'ETH (Wrapped)'
-                pair.token0.symbol = 'ETH'
+                pair.token0.name = 'HT (Wrapped)'
+                pair.token0.symbol = 'HT'
               }
               if (pair?.token1.id === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f') {
-                pair.token1.name = 'ETH (Wrapped)'
-                pair.token1.symbol = 'ETH'
+                pair.token1.name = 'HT (Wrapped)'
+                pair.token1.symbol = 'HT'
               }
               return (
                 <BasicLink to={'/pair/' + pair.id} key={pair.id} onClick={onDismiss}>
                   <MenuItem>
                     <DoubleTokenLogo a0={pair?.token0?.id} a1={pair?.token1?.id} margin={true} />
                     <TYPE.body style={{ marginLeft: '10px' }}>
-                      {pair.token0.symbol + '-' + pair.token1.symbol} Pair
+                      {pair.token0.symbol + '-' + pair.token1.symbol} 交易对
                     </TYPE.body>
                   </MenuItem>
                 </BasicLink>
@@ -486,17 +486,17 @@ export const Search = ({ small = false }) => {
                 setPairsShown(pairsShown + 5)
               }}
             >
-              See more...
+              查看更多...
             </Blue>
           </Heading>
         </div>
         <Heading>
-          <Gray>Tokens</Gray>
+          <Gray>令牌</Gray>
         </Heading>
         <div>
           {Object.keys(filteredTokenList).length === 0 && (
             <MenuItem>
-              <TYPE.body>No results</TYPE.body>
+              <TYPE.body>没有找到</TYPE.body>
             </MenuItem>
           )}
           {filteredTokenList.slice(0, tokensShown).map(token => {
@@ -521,7 +521,7 @@ export const Search = ({ small = false }) => {
                 setTokensShown(tokensShown + 5)
               }}
             >
-              See more...
+              查看更多...
             </Blue>
           </Heading>
         </div>

@@ -226,7 +226,7 @@ function PairPage({ pairAddress, history }) {
       <ContentWrapperLarge>
         <RowBetween>
           <TYPE.body>
-            <BasicLink to="/pairs">{'Pairs '}</BasicLink>→ {token0?.symbol}-{token1?.symbol}
+            <BasicLink to="/pairs">{'交易对 '}</BasicLink>→ {token0?.symbol}-{token1?.symbol}
           </TYPE.body>
           {!below600 && <Search small={true} />}
         </RowBetween>
@@ -251,7 +251,7 @@ function PairPage({ pairAddress, history }) {
                           <HoverSpan onClick={() => history.push(`/token/${token1?.id}`)}>
                             {token1.symbol}
                           </HoverSpan>{' '}
-                          Pair
+                          交易对
                         </>
                       ) : (
                           ''
@@ -279,11 +279,11 @@ function PairPage({ pairAddress, history }) {
                       )}
 
                   <Link external href={getPoolLink(token0?.id, token1?.id)}>
-                    <ButtonLight color={backgroundColor}>+ Add Liquidity</ButtonLight>
+                    <ButtonLight color={backgroundColor}>+ 添加流动性</ButtonLight>
                   </Link>
                   <Link external href={getSwapLink(token0?.id, token1?.id)}>
                     <ButtonDark ml={!below1080 && '.5rem'} mr={below1080 && '.5rem'} color={backgroundColor}>
-                      Trade
+                      去交易
                     </ButtonDark>
                   </Link>
                 </RowFixed>
@@ -322,12 +322,12 @@ function PairPage({ pairAddress, history }) {
               </FixedPanel>
             </AutoRow>
             <>
-              {!below1080 && <TYPE.main fontSize={'1.125rem'}>Pair Stats</TYPE.main>}
+              {!below1080 && <TYPE.main fontSize={'1.125rem'}>交易对状态</TYPE.main>}
               <PanelWrapper style={{ marginTop: '1.5rem' }}>
                 <Panel style={{ height: '100%' }}>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Total Liquidity {!usingTracked ? '(Untracked)' : ''}</TYPE.main>
+                      <TYPE.main>流动性总市值 {!usingTracked ? '(Untracked)' : ''}</TYPE.main>
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
@@ -341,7 +341,7 @@ function PairPage({ pairAddress, history }) {
                 <Panel style={{ height: '100%' }}>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Volume (24hrs) {usingUtVolume && '(Untracked)'}</TYPE.main>
+                      <TYPE.main>交易量 (24小时) {usingUtVolume && '(Untracked)'}</TYPE.main>
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
@@ -355,7 +355,7 @@ function PairPage({ pairAddress, history }) {
                 <Panel style={{ height: '100%' }}>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Fees (24hrs)</TYPE.main>
+                      <TYPE.main>手续费收益 (24小时)</TYPE.main>
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
@@ -370,7 +370,7 @@ function PairPage({ pairAddress, history }) {
                 <Panel style={{ height: '100%' }}>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Pooled Tokens</TYPE.main>
+                      <TYPE.main>令牌</TYPE.main>
                       <div />
                     </RowBetween>
                     <Hover onClick={() => history.push(`/token/${token0?.id}`)} fade={true}>
@@ -407,7 +407,7 @@ function PairPage({ pairAddress, history }) {
                 </Panel>
               </PanelWrapper>
               <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
-                Transactions
+                交易列表
               </TYPE.main>{' '}
               <Panel
                 style={{
@@ -417,7 +417,7 @@ function PairPage({ pairAddress, history }) {
                 {transactions ? <TxnList transactions={transactions} /> : <Loader fill="bool" />}
               </Panel>
               <RowBetween style={{ marginTop: '3rem' }}>
-                <TYPE.main fontSize={'1.125rem'}>Pair Information</TYPE.main>{' '}
+                <TYPE.main fontSize={'1.125rem'}>交易对信息</TYPE.main>{' '}
               </RowBetween>
               <Panel
                 rounded
@@ -428,7 +428,7 @@ function PairPage({ pairAddress, history }) {
               >
                 <TokenDetailsLayout>
                   <Column>
-                    <TYPE.main>Pair Name</TYPE.main>
+                    <TYPE.main>名称</TYPE.main>
                     <TYPE.main style={{ marginTop: '.5rem' }}>
                       <RowFixed>
                         <FormattedName text={token0?.symbol ?? ''} maxCharacters={8} />-
@@ -437,7 +437,7 @@ function PairPage({ pairAddress, history }) {
                     </TYPE.main>
                   </Column>
                   <Column>
-                    <TYPE.main>Pair Address</TYPE.main>
+                    <TYPE.main>地址</TYPE.main>
                     <AutoRow align="flex-end">
                       <TYPE.main style={{ marginTop: '.5rem' }}>
                         {pairAddress.slice(0, 6) + '...' + pairAddress.slice(38, 42)}
@@ -449,7 +449,7 @@ function PairPage({ pairAddress, history }) {
                     <TYPE.main>
                       <RowFixed>
                         <FormattedName text={token0?.symbol ?? ''} maxCharacters={8} />{' '}
-                        <span style={{ marginLeft: '4px' }}>Address</span>
+                        <span style={{ marginLeft: '4px' }}>地址</span>
                       </RowFixed>
                     </TYPE.main>
                     <AutoRow align="flex-end">
@@ -463,7 +463,7 @@ function PairPage({ pairAddress, history }) {
                     <TYPE.main>
                       <RowFixed>
                         <FormattedName text={token1?.symbol ?? ''} maxCharacters={8} />{' '}
-                        <span style={{ marginLeft: '4px' }}>Address</span>
+                        <span style={{ marginLeft: '4px' }}>地址</span>
                       </RowFixed>
                     </TYPE.main>
                     <AutoRow align="flex-end">
@@ -474,7 +474,7 @@ function PairPage({ pairAddress, history }) {
                     </AutoRow>
                   </Column>
                   <Column>
-                    <TYPE.main>Fee</TYPE.main>
+                    <TYPE.main>手续费</TYPE.main>
                     <TYPE.main style={{ marginTop: '.5rem' }}>
                       <RowFixed>
                         <span>{fee / 10} %</span>
@@ -483,13 +483,13 @@ function PairPage({ pairAddress, history }) {
                   </Column>
                   <ButtonLight color={backgroundColor}>
                     <Link color={backgroundColor} external href={'https://scan.hecochain.com/address/' + pairAddress}>
-                      View on HecoScan ↗
+                      在HecoScan上查看 ↗
                     </Link>
                   </ButtonLight>
                 </TokenDetailsLayout>
               </Panel>
               <RowBetween style={{ marginTop: '3rem' }}>
-                <TYPE.main fontSize={'1.125rem'}>Other Information</TYPE.main>{' '}
+                <TYPE.main fontSize={'1.125rem'}>其他信息</TYPE.main>{' '}
               </RowBetween>
               <Panel
                 rounded
@@ -534,7 +534,7 @@ function PairPage({ pairAddress, history }) {
                 </TokenDetailsLayout>)}
                 <TokenDetailsLayout>
                   <Column>
-                    <TYPE.main>{token0?.symbol ?? ''} Mining Rate</TYPE.main>
+                    <TYPE.main>{token0?.symbol ?? ''} 挖矿比率</TYPE.main>
                     <TYPE.main style={{ marginTop: '.5rem' }}>
                       <RowFixed>
                         {token0MintRate} %
@@ -542,7 +542,7 @@ function PairPage({ pairAddress, history }) {
                     </TYPE.main>
                   </Column>
                   <Column>
-                    <TYPE.main>{token1?.symbol ?? ''} Mining Rate</TYPE.main>
+                    <TYPE.main>{token1?.symbol ?? ''} 挖矿比率</TYPE.main>
                     <TYPE.main style={{ marginTop: '.5rem' }}>
                       <RowFixed>
                         {token1MintRate} %
@@ -550,7 +550,7 @@ function PairPage({ pairAddress, history }) {
                     </TYPE.main>
                   </Column>
                   <Column>
-                    <TYPE.main>Dummy0 %</TYPE.main>
+                    <TYPE.main>虚流动性0 %</TYPE.main>
                     <TYPE.main style={{ marginTop: '.5rem' }}>
                       <RowFixed>
                         {dummy0Percentage} %
@@ -558,7 +558,7 @@ function PairPage({ pairAddress, history }) {
                     </TYPE.main>
                   </Column>
                   <Column>
-                    <TYPE.main>Dummy1 %</TYPE.main>
+                    <TYPE.main>虚流动性1 %</TYPE.main>
                     <TYPE.main style={{ marginTop: '.5rem' }}>
                       <RowFixed>
                         {dummy1Percentage} %

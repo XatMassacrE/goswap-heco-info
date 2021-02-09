@@ -130,7 +130,7 @@ const PairChart = ({ address, color, base0, base1 }) => {
                   setChartFilter(CHART_VIEW.LIQUIDITY)
                 }}
               >
-                Liquidity
+                流动性市值
             </OptionButton>
               <OptionButton
                 active={chartFilter === CHART_VIEW.VOLUME}
@@ -139,7 +139,7 @@ const PairChart = ({ address, color, base0, base1 }) => {
                   setChartFilter(CHART_VIEW.VOLUME)
                 }}
               >
-                Volume
+                交易量
             </OptionButton>
               <OptionButton
                 active={chartFilter === CHART_VIEW.RATE0}
@@ -165,19 +165,19 @@ const PairChart = ({ address, color, base0, base1 }) => {
                 active={timeWindow === timeframeOptions.WEEK}
                 onClick={() => setTimeWindow(timeframeOptions.WEEK)}
               >
-                1W
+                1周
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.MONTH}
                 onClick={() => setTimeWindow(timeframeOptions.MONTH)}
               >
-                1M
+                1月
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.ALL_TIME}
                 onClick={() => setTimeWindow(timeframeOptions.ALL_TIME)}
               >
-                All
+                所有
             </OptionButton>
             </AutoRow>
           </OptionsRow>

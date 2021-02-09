@@ -164,11 +164,11 @@ function PositionList({ positions }) {
                 href={getPoolLink(position.pair.token0.id, position.pair.token1.id)}
                 style={{ marginRight: '.5rem' }}
               >
-                <ButtonLight style={{ padding: '4px 6px', borderRadius: '4px' }}>Add</ButtonLight>
+                <ButtonLight style={{ padding: '4px 6px', borderRadius: '4px' }}>添加</ButtonLight>
               </Link>
               {poolOwnership > 0 && (
                 <Link external href={getPoolLink(position.pair.token0.id, position.pair.token1.id, true)}>
-                  <ButtonLight style={{ padding: '4px 6px', borderRadius: '4px' }}>Remove</ButtonLight>
+                  <ButtonLight style={{ padding: '4px 6px', borderRadius: '4px' }}>移除</ButtonLight>
                 </Link>
               )}
             </RowFixed>
@@ -292,7 +292,7 @@ function PositionList({ positions }) {
           </Flex>
         )}
         <Flex alignItems="flex-start" justifyContent="flex-start">
-          <TYPE.main area="number">Name</TYPE.main>
+          <TYPE.main area="number">名称</TYPE.main>
         </Flex>
         <Flex alignItems="center" justifyContent="flexEnd">
           <ClickableText
@@ -302,7 +302,7 @@ function PositionList({ positions }) {
               setSortDirection(sortedColumn !== SORT_FIELD.VALUE ? true : !sortDirection)
             }}
           >
-            {below740 ? 'Value' : 'Liquidity'} {sortedColumn === SORT_FIELD.VALUE ? (!sortDirection ? '↑' : '↓') : ''}
+            {below740 ? '数量' : '流动性市值'} {sortedColumn === SORT_FIELD.VALUE ? (!sortDirection ? '↑' : '↓') : ''}
           </ClickableText>
         </Flex>
         {!below500 && (
@@ -314,7 +314,7 @@ function PositionList({ positions }) {
                 setSortDirection(sortedColumn !== SORT_FIELD.uniscam_RETURN ? true : !sortDirection)
               }}
             >
-              {below740 ? 'Fees' : 'Total Fees Earned'}{' '}
+              {below740 ? '手续费收益' : '全部手续费收益'}{' '}
               {sortedColumn === SORT_FIELD.uniscam_RETURN ? (!sortDirection ? '↑' : '↓') : ''}
             </ClickableText>
           </Flex>
@@ -326,7 +326,7 @@ function PositionList({ positions }) {
         <div onClick={() => setPage(page === 1 ? page : page - 1)}>
           <Arrow faded={page === 1 ? true : false}>←</Arrow>
         </div>
-        <TYPE.body>{'Page ' + page + ' of ' + maxPage}</TYPE.body>
+        <TYPE.body>{'第 ' + page + ' 至 ' + maxPage + ' 页'}</TYPE.body>
         <div onClick={() => setPage(page === maxPage ? page : page + 1)}>
           <Arrow faded={page === maxPage ? true : false}>→</Arrow>
         </div>

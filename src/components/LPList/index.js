@@ -152,7 +152,7 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
           </Flex>
         )}
         <Flex alignItems="center" justifyContent="flex-start">
-          <TYPE.main area="name">Account</TYPE.main>
+          <TYPE.main area="name">账户地址</TYPE.main>
         </Flex>
         {/* {!below1080 && (
           <Flex alignItems="center" justifyContent="flexEnd">
@@ -160,7 +160,7 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
           </Flex>
         )} */}
         <Flex alignItems="center" justifyContent="flexEnd">
-          <TYPE.main area="pair">Pair</TYPE.main>
+          <TYPE.main area="pair">交易对</TYPE.main>
         </Flex>
         <Flex alignItems="center" justifyContent="flexEnd">
           <TYPE.main area="value">Value</TYPE.main>
@@ -172,7 +172,7 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
         <div onClick={() => setPage(page === 1 ? page : page - 1)}>
           <Arrow faded={page === 1 ? true : false}>←</Arrow>
         </div>
-        <TYPE.body>{'Page ' + page + ' of ' + maxPage}</TYPE.body>
+        <TYPE.body>{'第 ' + page + ' 至 ' + maxPage + ' 页'}</TYPE.body>
         <div onClick={() => setPage(page === maxPage ? page : page + 1)}>
           <Arrow faded={page === maxPage ? true : false}>→</Arrow>
         </div>

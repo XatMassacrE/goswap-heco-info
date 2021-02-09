@@ -65,10 +65,10 @@ const PairReturnsChart = ({ account, position }) => {
           <OptionsRow>
             <AutoRow gap="6px" style={{ flexWrap: 'nowrap' }}>
               <OptionButton active={chartView === CHART_VIEW.VALUE} onClick={() => setChartView(CHART_VIEW.VALUE)}>
-                Liquidity
+              流动性市值
             </OptionButton>
               <OptionButton active={chartView === CHART_VIEW.FEES} onClick={() => setChartView(CHART_VIEW.FEES)}>
-                Fees
+                手续费收益
             </OptionButton>
             </AutoRow>
             <AutoRow justify="flex-end" gap="6px">
@@ -76,19 +76,19 @@ const PairReturnsChart = ({ account, position }) => {
                 active={timeWindow === timeframeOptions.WEEK}
                 onClick={() => setTimeWindow(timeframeOptions.WEEK)}
               >
-                1W
+                1周
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.MONTH}
                 onClick={() => setTimeWindow(timeframeOptions.MONTH)}
               >
-                1M
+                1月
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.ALL_TIME}
                 onClick={() => setTimeWindow(timeframeOptions.ALL_TIME)}
               >
-                All
+                所有
             </OptionButton>
             </AutoRow>
           </OptionsRow>

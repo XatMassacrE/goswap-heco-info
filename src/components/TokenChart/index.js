@@ -153,14 +153,14 @@ const TokenChart = ({ address, color, base }) => {
                   onClick={() => setChartFilter(CHART_VIEW.LIQUIDITY)}
                   style={{ marginRight: '6px' }}
                 >
-                  Liquidity
+                  流动性总市值
               </OptionButton>
                 <OptionButton
                   active={chartFilter === CHART_VIEW.VOLUME}
                   onClick={() => setChartFilter(CHART_VIEW.VOLUME)}
                   style={{ marginRight: '6px' }}
                 >
-                  Volume
+                  交易量
               </OptionButton>
                 <OptionButton
                   active={chartFilter === CHART_VIEW.PRICE}
@@ -168,7 +168,7 @@ const TokenChart = ({ address, color, base }) => {
                     setChartFilter(CHART_VIEW.PRICE)
                   }}
                 >
-                  Price
+                  价格
               </OptionButton>
               </RowFixed>
               {chartFilter === CHART_VIEW.PRICE && (
@@ -180,13 +180,13 @@ const TokenChart = ({ address, color, base }) => {
                       setFrequency(DATA_FREQUENCY.DAY)
                     }}
                   >
-                    D
+                    天
                 </PriceOption>
                   <PriceOption
                     active={frequency === DATA_FREQUENCY.HOUR}
                     onClick={() => setFrequency(DATA_FREQUENCY.HOUR)}
                   >
-                    H
+                    时
                 </PriceOption>
                   <PriceOption
                     active={frequency === DATA_FREQUENCY.LINE}
@@ -202,19 +202,19 @@ const TokenChart = ({ address, color, base }) => {
                 active={timeWindow === timeframeOptions.WEEK}
                 onClick={() => setTimeWindow(timeframeOptions.WEEK)}
               >
-                1W
+                1周
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.MONTH}
                 onClick={() => setTimeWindow(timeframeOptions.MONTH)}
               >
-                1M
+                1月
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.ALL_TIME}
                 onClick={() => setTimeWindow(timeframeOptions.ALL_TIME)}
               >
-                All
+                所有
             </OptionButton>
             </AutoRow>
           </RowBetween>
@@ -332,7 +332,7 @@ const TokenChart = ({ address, color, base }) => {
                 strokeWidth={2}
                 dot={false}
                 type="monotone"
-                name={'Price'}
+                name={'价格'}
                 yAxisId={0}
                 stroke={darken(0.12, color)}
                 fill="url(#colorUv)"

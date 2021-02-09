@@ -144,7 +144,7 @@ export const ThemedBackground = styled.div`
   pointer-events: none;
   max-width: 100vw !important;
   height: 200vh;
-  mix-blend-mode: color;
+  // mix-blend-mode: color;
   background: ${({ backgroundColor }) =>
     `radial-gradient(50% 50% at 50% 50%, ${backgroundColor} 0%, rgba(255, 255, 255, 0) 100%)`};
   position: absolute;

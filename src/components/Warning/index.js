@@ -56,7 +56,7 @@ export default function Warning({ type, show, setShow, address }) {
         <RowFixed>
           <StyledWarningIcon />
           <Text fontWeight={600} lineHeight={'145.23%'} ml={'10px'}>
-            Token Safety Alert
+            令牌安全警告
           </Text>
         </RowFixed>
         {textContent}
@@ -70,13 +70,13 @@ export default function Warning({ type, show, setShow, address }) {
                 href={'https://scan.hecochain.com/address/' + address}
                 target="_blank"
               >
-                View {type === 'token' ? 'token' : 'pair'} contract on HecoScan
+                在HecoScan查看 {type === 'token' ? 'token' : 'pair'} 合约 
               </Link>
             </Hover>
             <RowBetween style={{ marginTop: '20px' }}>
               <div />
               <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
-                I understand
+                我明白了
               </ButtonDark>
             </RowBetween>
           </div>
@@ -90,11 +90,11 @@ export default function Warning({ type, show, setShow, address }) {
                 href={'https://scan.hecochain.com/address/' + address}
                 target="_blank"
               >
-                View {type === 'token' ? 'token' : 'pair'} contract on HecoScan
+              在HecoScan查看 {type === 'token' ? 'token' : 'pair'} 合约 
               </Link>
             </Hover>
             <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
-              I understand
+            我明白了
             </ButtonDark>
           </RowBetween>
         )}

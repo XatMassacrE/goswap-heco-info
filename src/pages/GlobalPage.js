@@ -69,7 +69,7 @@ function GlobalPage() {
       <ContentWrapper>
         <div>
           <AutoColumn gap="24px" style={{ paddingBottom: below800 ? '0' : '24px' }}>
-            <TYPE.largeHeader>{below800 ? 'Analytics' : 'GoSwap Info'}</TYPE.largeHeader>
+            <TYPE.largeHeader>{below800 ? '分析工具' : 'GoSwap 行情看板'}</TYPE.largeHeader>
             <Search />
             <GlobalStats />
           </AutoColumn>
@@ -80,7 +80,7 @@ function GlobalPage() {
                   <AutoColumn gap="36px">
                     <AutoColumn gap="20px">
                       <RowBetween>
-                        <TYPE.main>Volume (24hrs)</TYPE.main>
+                        <TYPE.main>交易量 (24小时)</TYPE.main>
                         <div />
                       </RowBetween>
                       <RowBetween align="flex-end">
@@ -92,7 +92,7 @@ function GlobalPage() {
                     </AutoColumn>
                     <AutoColumn gap="20px">
                       <RowBetween>
-                        <TYPE.main>Total Liquidity</TYPE.main>
+                        <TYPE.main>总流动性</TYPE.main>
                         <div />
                       </RowBetween>
                       <RowBetween align="flex-end">
@@ -126,8 +126,8 @@ function GlobalPage() {
           )}
           <ListOptions gap="10px" style={{ marginTop: '2rem', marginBottom: '.5rem' }}>
             <RowBetween>
-              <TYPE.main fontSize={'1.125rem'}>Top Tokens</TYPE.main>
-              <CustomLink to={'/tokens'}>See All</CustomLink>
+              <TYPE.main fontSize={'1.125rem'}>令牌</TYPE.main>
+              <CustomLink to={'/tokens'}>查看所有</CustomLink>
             </RowBetween>
           </ListOptions>
           <Panel style={{ marginTop: '6px', padding: '1.125rem 0 ' }}>
@@ -135,8 +135,8 @@ function GlobalPage() {
           </Panel>
           <ListOptions gap="10px" style={{ marginTop: '2rem', marginBottom: '.5rem' }}>
             <RowBetween>
-              <TYPE.main fontSize={'1rem'}>Top Pairs</TYPE.main>
-              <CustomLink to={'/pairs'}>See All</CustomLink>
+              <TYPE.main fontSize={'1rem'}>交易对</TYPE.main>
+              <CustomLink to={'/pairs'}>查看所有</CustomLink>
             </RowBetween>
           </ListOptions>
           <Panel style={{ marginTop: '6px', padding: '1.125rem 0 ' }}>
@@ -145,7 +145,7 @@ function GlobalPage() {
 
           <span>
             <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '2rem' }}>
-              Transactions
+              最新交易
             </TYPE.main>
           </span>
           <Panel style={{ margin: '1rem 0' }}>

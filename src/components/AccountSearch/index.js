@@ -99,7 +99,7 @@ function AccountSearch({ history, small }) {
                 }}
               />
             </Wrapper>
-            <ButtonLight onClick={handleAccountSearch}>Load Account Details</ButtonLight>
+            <ButtonLight onClick={handleAccountSearch}>查看账户详细信息</ButtonLight>
           </AutoRow>
         </>
       )}
@@ -108,7 +108,7 @@ function AccountSearch({ history, small }) {
         {!small && (
           <Panel>
             <DashGrid center={true} style={{ height: 'fit-content', padding: '0 0 1rem 0' }}>
-              <TYPE.main area="account">Saved Accounts</TYPE.main>
+              <TYPE.main area="account">保存账户</TYPE.main>
             </DashGrid>
             <Divider />
             {savedAccounts?.length > 0 ? (
@@ -131,14 +131,14 @@ function AccountSearch({ history, small }) {
                 )
               })
             ) : (
-              <TYPE.light style={{ marginTop: '1rem' }}>No saved accounts</TYPE.light>
+              <TYPE.light style={{ marginTop: '1rem' }}>没有保存过的账户</TYPE.light>
             )}
           </Panel>
         )}
 
         {small && (
           <>
-            <TYPE.main>{'Accounts'}</TYPE.main>
+            <TYPE.main>{'保存的账户'}</TYPE.main>
             {savedAccounts?.length > 0 ? (
               savedAccounts.map(account => {
                 return (
@@ -159,7 +159,7 @@ function AccountSearch({ history, small }) {
                 )
               })
             ) : (
-              <TYPE.light>No pinned wallets</TYPE.light>
+              <TYPE.light>将账户地址保存在这里</TYPE.light>
             )}
           </>
         )}

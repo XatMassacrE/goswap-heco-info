@@ -67,7 +67,7 @@ export default class Popout extends Component {
           menuIsOpen
           onChange={this.onSelectChange}
           options={this.props.data}
-          placeholder="Search..."
+          placeholder="搜索..."
           styles={selectStyles}
           tabSelectsValue={false}
           value={value}

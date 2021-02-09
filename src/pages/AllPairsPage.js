@@ -23,7 +23,7 @@ function AllPairsPage() {
     <PageWrapper>
       <FullWrapper>
         <RowBetween>
-          <TYPE.largeHeader>Top Pairs</TYPE.largeHeader>
+          <TYPE.largeHeader>交易对列表(市值前100)</TYPE.largeHeader>
           {!below800 && <Search small={true} />}
         </RowBetween>
         <Panel style={{ padding: below800 && '1rem 0 0 0 ' }}>

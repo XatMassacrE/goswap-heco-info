@@ -48,26 +48,26 @@ const UserChart = ({ account }) => {
       ) : (
           <RowBetween mb={40}>
             <AutoRow gap="10px">
-              <TYPE.main>Liquidity Value</TYPE.main>
+              <TYPE.main>流动性市值</TYPE.main>
             </AutoRow>
             <AutoRow justify="flex-end" gap="4px">
               <OptionButton
                 active={timeWindow === timeframeOptions.MONTH}
                 onClick={() => setTimeWindow(timeframeOptions.MONTH)}
               >
-                1M
+                1月
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.WEEK}
                 onClick={() => setTimeWindow(timeframeOptions.WEEK)}
               >
-                1W
+                1周
             </OptionButton>
               <OptionButton
                 active={timeWindow === timeframeOptions.ALL_TIME}
                 onClick={() => setTimeWindow(timeframeOptions.ALL_TIME)}
               >
-                All
+                所有
             </OptionButton>
             </AutoRow>
           </RowBetween>
@@ -124,7 +124,7 @@ const UserChart = ({ account }) => {
               strokeWidth={2}
               dot={false}
               type="monotone"
-              name={'Liquidity'}
+              name={'流动性市值'}
               yAxisId={0}
               stroke={darken(0.12, '#4FD8DE')}
               fill="url(#colorUv)"

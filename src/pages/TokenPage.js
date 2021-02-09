@@ -181,7 +181,7 @@ function TokenPage({ address, history }) {
         <RowBetween style={{ flexWrap: 'wrap', alingItems: 'start' }}>
           <AutoRow align="flex-end" style={{ width: 'fit-content' }}>
             <TYPE.body>
-              <BasicLink to="/tokens">{'Tokens '}</BasicLink>→ {symbol}
+              <BasicLink to="/tokens">{'令牌 '}</BasicLink>→ {symbol}
               {'  '}
             </TYPE.body>
             <Link
@@ -236,11 +236,11 @@ function TokenPage({ address, history }) {
                         <></>
                       )}
                   <Link href={getPoolLink(address)} target="_blank">
-                    <ButtonLight color={backgroundColor}>+ Add Liquidity</ButtonLight>
+                    <ButtonLight color={backgroundColor}>+ 添加流动性</ButtonLight>
                   </Link>
                   <Link href={getSwapLink(address)} target="_blank">
                     <ButtonDark ml={'.5rem'} mr={below1080 && '.5rem'} color={backgroundColor}>
-                      Trade
+                      去交易
                     </ButtonDark>
                   </Link>
                 </RowFixed>
@@ -269,7 +269,7 @@ function TokenPage({ address, history }) {
                 <Panel>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Total Liquidity</TYPE.main>
+                      <TYPE.main>流动性总市值</TYPE.main>
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
@@ -283,7 +283,7 @@ function TokenPage({ address, history }) {
                 <Panel>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Volume (24hrs) {usingUtVolume && '(Untracked)'}</TYPE.main>
+                      <TYPE.main>交易量 (24小时) {usingUtVolume && '(Untracked)'}</TYPE.main>
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
@@ -298,7 +298,7 @@ function TokenPage({ address, history }) {
                 <Panel>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Transactions (24hrs)</TYPE.main>
+                      <TYPE.main>交易笔数 (24小时)</TYPE.main>
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
@@ -317,7 +317,7 @@ function TokenPage({ address, history }) {
 
             <span>
               <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
-                Top Pairs
+                交易对列表
               </TYPE.main>
             </span>
             <Panel
@@ -334,14 +334,14 @@ function TokenPage({ address, history }) {
                 )}
             </Panel>
             <RowBetween mt={40} mb={'1rem'}>
-              <TYPE.main fontSize={'1.125rem'}>Transactions</TYPE.main> <div />
+              <TYPE.main fontSize={'1.125rem'}>最新交易</TYPE.main> <div />
             </RowBetween>
             <Panel rounded>
               {transactions ? <TxnList color={backgroundColor} transactions={transactions} /> : <Loader fill="bool" />}
             </Panel>
             <>
               <RowBetween style={{ marginTop: '3rem' }}>
-                <TYPE.main fontSize={'1.125rem'}>Token Information</TYPE.main>{' '}
+                <TYPE.main fontSize={'1.125rem'}>令牌详情</TYPE.main>{' '}
               </RowBetween>
               <Panel
                 rounded
@@ -352,19 +352,19 @@ function TokenPage({ address, history }) {
               >
                 <TokenDetailsLayout>
                   <Column>
-                    <TYPE.main>Symbol</TYPE.main>
+                    <TYPE.main>符号</TYPE.main>
                     <Text style={{ marginTop: '.5rem' }} fontSize={24} fontWeight="500">
                       <FormattedName text={symbol} maxCharacters={12} />
                     </Text>
                   </Column>
                   <Column>
-                    <TYPE.main>Name</TYPE.main>
+                    <TYPE.main>名称</TYPE.main>
                     <TYPE.main style={{ marginTop: '.5rem' }} fontSize={24} fontWeight="500">
                       <FormattedName text={name} maxCharacters={16} />
                     </TYPE.main>
                   </Column>
                   <Column>
-                    <TYPE.main>Address</TYPE.main>
+                    <TYPE.main>地址</TYPE.main>
                     <AutoRow align="flex-end">
                       <TYPE.main style={{ marginTop: '.5rem' }} fontSize={24} fontWeight="500">
                         {address.slice(0, 8) + '...' + address.slice(36, 42)}
@@ -374,7 +374,7 @@ function TokenPage({ address, history }) {
                   </Column>
                   <ButtonLight color={backgroundColor}>
                     <Link color={backgroundColor} external href={'https://scan.hecochain.com/address/' + address}>
-                      View on HecoScan ↗
+                      在HecoScan上查看 ↗
                     </Link>
                   </ButtonLight>
                 </TokenDetailsLayout>

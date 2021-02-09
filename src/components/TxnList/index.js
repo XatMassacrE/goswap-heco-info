@@ -150,11 +150,11 @@ function getTransactionType(event, symbol0, symbol1) {
   const formattedS1 = symbol1?.length > 8 ? symbol1.slice(0, 7) + '...' : symbol1
   switch (event) {
     case TXN_TYPE.ADD:
-      return 'Add ' + formattedS0 + ' and ' + formattedS1
+      return '添加 ' + formattedS0 + ' 和 ' + formattedS1
     case TXN_TYPE.REMOVE:
-      return 'Remove ' + formattedS0 + ' and ' + formattedS1
+      return '移除 ' + formattedS0 + ' 和 ' + formattedS1
     case TXN_TYPE.SWAP:
-      return 'Swap ' + formattedS0 + ' for ' + formattedS1
+      return '用 ' + formattedS0 + ' 交换 ' + formattedS1
     default:
       return ''
   }
@@ -279,12 +279,12 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
   const below780 = useMedia('(max-width: 780px)')
 
   const ListItem = ({ item }) => {
-    if (item.token0Symbol === 'WETH') {
-      item.token0Symbol = 'ETH'
+    if (item.token0Symbol === 'WHT') {
+      item.token0Symbol = 'HT'
     }
 
-    if (item.token1Symbol === 'WETH') {
-      item.token1Symbol = 'ETH'
+    if (item.token1Symbol === 'WHT') {
+      item.token1Symbol = 'HT'
     }
 
     return (
@@ -295,7 +295,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
           </Link>
         </DataText>
         <DataText area="value">
-          {currency === 'ETH' ? 'Ξ ' + formattedNum(item.valueETH) : formattedNum(item.amountUSD, true)}
+          {currency === 'HT' ? 'Ξ ' + formattedNum(item.valueETH) : formattedNum(item.amountUSD, true)}
         </DataText>
         {!below780 && (
           <>
@@ -336,7 +336,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                 }}
                 active={txFilter === TXN_TYPE.ALL}
               >
-                All
+                全部
             </SortText>
               <SortText
                 onClick={() => {
@@ -344,7 +344,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                 }}
                 active={txFilter === TXN_TYPE.SWAP}
               >
-                Swaps
+                交易
             </SortText>
               <SortText
                 onClick={() => {
@@ -352,7 +352,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                 }}
                 active={txFilter === TXN_TYPE.ADD}
               >
-                Adds
+                添加
             </SortText>
               <SortText
                 onClick={() => {
@@ -360,7 +360,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                 }}
                 active={txFilter === TXN_TYPE.REMOVE}
               >
-                Removes
+                移除
             </SortText>
             </RowFixed>
           )}
@@ -374,7 +374,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
               setSortDirection(sortedColumn !== SORT_FIELD.VALUE ? true : !sortDirection)
             }}
           >
-            Total Value {sortedColumn === SORT_FIELD.VALUE ? (!sortDirection ? '↑' : '↓') : ''}
+            总量 {sortedColumn === SORT_FIELD.VALUE ? (!sortDirection ? '↑' : '↓') : ''}
           </ClickableText>
         </Flex>
         {!below780 && (
@@ -387,7 +387,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                 setSortDirection(sortedColumn !== SORT_FIELD.AMOUNT0 ? true : !sortDirection)
               }}
             >
-              {symbol0Override ? symbol0Override + ' Amount' : 'Token Amount'}{' '}
+              {symbol0Override ? symbol0Override + ' 数量' : '令牌数量'}{' '}
               {sortedColumn === SORT_FIELD.AMOUNT0 ? (sortDirection ? '↑' : '↓') : ''}
             </ClickableText>
           </Flex>
@@ -403,14 +403,14 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                   setSortDirection(sortedColumn !== SORT_FIELD.AMOUNT1 ? true : !sortDirection)
                 }}
               >
-                {symbol1Override ? symbol1Override + ' Amount' : 'Token Amount'}{' '}
+                {symbol1Override ? symbol1Override + ' 数量' : '令牌数量'}{' '}
                 {sortedColumn === SORT_FIELD.AMOUNT1 ? (sortDirection ? '↑' : '↓') : ''}
               </ClickableText>
             </Flex>
           )}
           {!below1080 && (
             <Flex alignItems="center">
-              <TYPE.body area="account">Account</TYPE.body>
+              <TYPE.body area="account">账户地址</TYPE.body>
             </Flex>
           )}
           <Flex alignItems="center">
@@ -422,7 +422,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                 setSortDirection(sortedColumn !== SORT_FIELD.TIMESTAMP ? true : !sortDirection)
               }}
             >
-              Time {sortedColumn === SORT_FIELD.TIMESTAMP ? (!sortDirection ? '↑' : '↓') : ''}
+              时间 {sortedColumn === SORT_FIELD.TIMESTAMP ? (!sortDirection ? '↑' : '↓') : ''}
             </ClickableText>
           </Flex>
         </>
@@ -432,7 +432,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
         {!filteredList ? (
           <LocalLoader fill="bool" />
         ) : filteredList.length === 0 ? (
-          <EmptyCard>No recent transactions found.</EmptyCard>
+          <EmptyCard>当前没有过交易</EmptyCard>
         ) : (
               filteredList.map((item, index) => {
                 return (
@@ -452,7 +452,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
         >
           <Arrow faded={page === 1 ? true : false}>←</Arrow>
         </div>
-        <TYPE.body>{'Page ' + page + ' of ' + maxPage}</TYPE.body>
+        <TYPE.body>{'第 ' + page + ' 至 ' + maxPage + ' 页'}</TYPE.body>
         <div
           onClick={e => {
             setPage(page === maxPage ? page : page + 1)

@@ -118,7 +118,7 @@ function SideNav({ history }) {
                 <BasicLink to="/home">
                   <Option activeText={history.location.pathname === '/home' ?? undefined}>
                     <TrendingUp size={20} style={{ marginRight: '.75rem' }} />
-                    Overview
+                    概览
                   </Option>
                 </BasicLink>
                 <BasicLink to="/tokens">
@@ -130,7 +130,7 @@ function SideNav({ history }) {
                     }
                   >
                     <Disc size={20} style={{ marginRight: '.75rem' }} />
-                    Tokens
+                    令牌
                   </Option>
                 </BasicLink>
                 <BasicLink to="/pairs">
@@ -142,7 +142,7 @@ function SideNav({ history }) {
                     }
                   >
                     <PieChart size={20} style={{ marginRight: '.75rem' }} />
-                    Pairs
+                    交易对
                   </Option>
                 </BasicLink>
                 <BasicLink to="/accounts">
@@ -154,7 +154,7 @@ function SideNav({ history }) {
                     }
                   >
                     <List size={20} style={{ marginRight: '.75rem' }} />
-                    Accounts
+                    账户
                   </Option>
                 </BasicLink>
                 {/* <BasicLink to="/strategy">
@@ -189,7 +189,7 @@ function SideNav({ history }) {
               <PollingDot />
               <a href="/" style={{ color: 'white' }}>
                 <TYPE.small color={'white'}>
-                  Updated {!!seconds ? seconds + 's' : '-'} ago <br />
+                  在 {!!seconds ? seconds + '秒' : '-'} 前更新 <br />
                 </TYPE.small>
               </a>
             </Polling>

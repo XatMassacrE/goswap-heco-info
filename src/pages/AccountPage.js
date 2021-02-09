@@ -168,7 +168,7 @@ function AccountPage({ account }) {
             <span>
               <TYPE.header fontSize={24}>{account?.slice(0, 6) + '...' + account?.slice(38, 42)}</TYPE.header>
               <Link lineHeight={'145.23%'} href={'https://scan.hecochain.com/address/' + account} target="_blank">
-                <TYPE.main fontSize={14}>View on HecoScan</TYPE.main>
+                <TYPE.main fontSize={14}>在HecoScan上查看</TYPE.main>
               </Link>
             </span>
             <AccountWrapper>
@@ -179,7 +179,7 @@ function AccountPage({ account }) {
           </RowBetween>
         </Header>
         <DashboardWrapper>
-          {showWarning && <Warning>Fees cannot currently be calculated for pairs that include AMPL.</Warning>}
+          {showWarning && <Warning>当前无法计算包含AMPL的货币对的费用。</Warning>}
           {!hideLPContent && (
             <DropdownWrapper>
               <ButtonDropdown width="100%" onClick={() => setShowDropdown(!showDropdown)} open={showDropdown}>
@@ -188,14 +188,14 @@ function AccountPage({ account }) {
                     <StyledIcon>
                       <Activity size={16} />
                     </StyledIcon>
-                    <TYPE.body ml={'10px'}>All Positions</TYPE.body>
+                    <TYPE.body ml={'10px'}>所有头寸</TYPE.body>
                   </RowFixed>
                 )}
                 {activePosition && (
                   <RowFixed>
                     <DoubleTokenLogo a0={activePosition.pair.token0.id} a1={activePosition.pair.token1.id} size={16} />
                     <TYPE.body ml={'16px'}>
-                      {activePosition.pair.token0.symbol}-{activePosition.pair.token1.symbol} Position
+                      {activePosition.pair.token0.symbol}-{activePosition.pair.token1.symbol} 的头寸
                     </TYPE.body>
                   </RowFixed>
                 )}
@@ -221,7 +221,7 @@ function AccountPage({ account }) {
                           >
                             <DoubleTokenLogo a0={p.pair.token0.id} a1={p.pair.token1.id} size={16} />
                             <TYPE.body ml={'16px'}>
-                              {p.pair.token0.symbol}-{p.pair.token1.symbol} Position
+                              {p.pair.token0.symbol}-{p.pair.token1.symbol} 的头寸
                             </TYPE.body>
                           </MenuRow>
                         )
@@ -238,7 +238,7 @@ function AccountPage({ account }) {
                           <StyledIcon>
                             <Activity size={16} />
                           </StyledIcon>
-                          <TYPE.body ml={'10px'}>All Positions</TYPE.body>
+                          <TYPE.body ml={'10px'}>所有头寸</TYPE.body>
                         </RowFixed>
                       </MenuRow>
                     )}
@@ -252,7 +252,7 @@ function AccountPage({ account }) {
               <AutoRow gap="20px">
                 <AutoColumn gap="10px">
                   <RowBetween>
-                    <TYPE.body>Liquidity (Including Fees)</TYPE.body>
+                    <TYPE.body>所有流动性总体市值 (包含手续费)</TYPE.body>
                     <div />
                   </RowBetween>
                   <RowFixed align="flex-end">
@@ -267,7 +267,7 @@ function AccountPage({ account }) {
                 </AutoColumn>
                 <AutoColumn gap="10px">
                   <RowBetween>
-                    <TYPE.body>Fees Earned (Cumulative)</TYPE.body>
+                    <TYPE.body>手续费收入(累积的)</TYPE.body>
                     <div />
                   </RowBetween>
                   <RowFixed align="flex-end">
@@ -291,7 +291,7 @@ function AccountPage({ account }) {
             </PanelWrapper>
           )}
           <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
-            Positions
+          流动性列表
           </TYPE.main>{' '}
           <Panel
             style={{
@@ -301,7 +301,7 @@ function AccountPage({ account }) {
             <PositionList positions={positions} />
           </Panel>
           <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
-            Transactions
+            交易列表
           </TYPE.main>{' '}
           <Panel
             style={{
@@ -311,7 +311,7 @@ function AccountPage({ account }) {
             <TxnList transactions={transactions} />
           </Panel>
           <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
-            Wallet Stats
+            钱包状态
           </TYPE.main>{' '}
           <Panel
             style={{
@@ -321,17 +321,17 @@ function AccountPage({ account }) {
             <AutoRow gap="20px">
               <AutoColumn gap="8px">
                 <TYPE.header fontSize={24}>{totalSwappedUSD ? formattedNum(totalSwappedUSD, true) : '-'}</TYPE.header>
-                <TYPE.main>Total Value Swapped</TYPE.main>
+                <TYPE.main>总交易额</TYPE.main>
               </AutoColumn>
               <AutoColumn gap="8px">
                 <TYPE.header fontSize={24}>
                   {totalSwappedUSD ? formattedNum(totalSwappedUSD * 0.003, true) : '-'}
                 </TYPE.header>
-                <TYPE.main>Total Fees Paid</TYPE.main>
+                <TYPE.main>手续费总支出</TYPE.main>
               </AutoColumn>
               <AutoColumn gap="8px">
                 <TYPE.header fontSize={24}>{transactionCount ? transactionCount : '-'}</TYPE.header>
-                <TYPE.main>Total Transactions</TYPE.main>
+                <TYPE.main>总交易数量</TYPE.main>
               </AutoColumn>
             </AutoRow>
           </Panel>

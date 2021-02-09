@@ -178,7 +178,7 @@ function StrategyList({ pairs, color, disbaleLinks, maxItems = 10 }) {
         >
           <Arrow faded={page === 1 ? true : false}>←</Arrow>
         </div>
-        <TYPE.body>{'Page ' + page + ' of ' + maxPage}</TYPE.body>
+        <TYPE.body>{'第 ' + page + ' 至 ' + maxPage + ' 页'}</TYPE.body>
         <div
           onClick={e => {
             setPage(page === maxPage ? page : page + 1)

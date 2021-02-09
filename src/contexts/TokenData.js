@@ -287,8 +287,8 @@ const getTopTokens = async (ethPrice, ethPriceOld) => {
           }
 
           if (data.id === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f') {
-            data.name = 'Ether (Wrapped)'
-            data.symbol = 'ETH'
+            data.name = 'HT (Wrapped)'
+            data.symbol = 'HT'
           }
           return data
         })
@@ -409,8 +409,8 @@ const getTokenData = async (address, ethPrice, ethPriceOld) => {
 
     // fix for WETH
     if (data.id === '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f') {
-      data.name = 'ETH (Wrapped)'
-      data.symbol = 'ETH'
+      data.name = 'HT (Wrapped)'
+      data.symbol = 'HT'
     }
   } catch (e) {
     console.log(e)

@@ -104,6 +104,7 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   padding-top: 36px;
   padding-bottom: 80px;
+  overflow: hidden;
 
   @media screen and (max-width: 600px) {
     & > * {
