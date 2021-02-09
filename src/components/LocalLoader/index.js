@@ -24,6 +24,21 @@ left:50%;
  @media (max-width: 835px) {
     left:44%;
   }
+  ${props => {
+    if (props.fill === "bool") {
+      return css`
+      margin: 10px auto;
+        `
+    } else if (props.fill === "char") {
+      return css`
+      margin: -160px auto;
+      `
+    } else {
+      return css`
+      `
+    }
+  }
+  }
   backface-visibility:hidden;
   z-index:2;
   animation: ${rotate} 3000ms ease-in-out infinite;
@@ -38,6 +53,21 @@ left:50%;
 @media (max-width: 835px) {
  left:44%;
 }
+${props => {
+    if (props.fill === "bool") {
+      return css`
+    margin: 10px auto;
+      `
+    } else if (props.fill === "char") {
+      return css`
+    margin: -160px auto;
+    `
+    } else {
+      return css`
+    `
+    }
+  }
+  }
   z-index:1;
   animation: ${rotate} 3000ms ease-in-out infinite;
 `
@@ -49,10 +79,10 @@ position:relative;
 const LocalLoader = ({ fill }) => {
   return (
     <Rotate>
-      <Loader>
+      <Loader fill={fill}>
         <img src={require('../../assets/logo.png')} alt="loading-icon" width="60" height="60" />
       </Loader>
-      <Loadera>
+      <Loadera fill={fill}>
         <img src={require('../../assets/logoa.png')} alt="loading-icon" width="60" height="60" />
       </Loadera>
     </Rotate>

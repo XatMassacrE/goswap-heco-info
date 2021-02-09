@@ -42,7 +42,7 @@ function AccountLookup() {
         <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '2rem' }}>
           Top Liquidity Positions
         </TYPE.main>
-        <Panel>{topLps && topLps.length > 0 ? <LPList lps={topLps} maxItems={200} /> : <LocalLoader />}</Panel>
+        <Panel>{topLps && topLps.length > 0 ? <LPList lps={topLps} maxItems={200} /> : <LocalLoader fill="bool" />}</Panel>
       </FullWrapper>
     </PageWrapper>
   )

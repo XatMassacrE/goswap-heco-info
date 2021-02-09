@@ -17,7 +17,7 @@ function StrategyListItem({ item, index, color, disbaleLinks }) {
   const below600 = useMedia('(max-width: 600px)')
   const [, apyType] = useApyType(item.yToken)
   const [itemApy, setItemApy] = useState(0)
-  
+
   useEffect(() => {
     const getApy = async () => {
       if (apyType === 'dForce') {
@@ -142,10 +142,10 @@ function StrategyList({ pairs, color, disbaleLinks, maxItems = 10 }) {
         <Flex alignItems="center" justifyContent="flexEnd">
           <ClickableText
             area="liq"
-            // onClick={e => {
-            //   setSortedColumn(SORT_FIELD.LIQ)
-            //   setSortDirection(sortedColumn !== SORT_FIELD.LIQ ? true : !sortDirection)
-            // }}
+          // onClick={e => {
+          //   setSortedColumn(SORT_FIELD.LIQ)
+          //   setSortDirection(sortedColumn !== SORT_FIELD.LIQ ? true : !sortDirection)
+          // }}
           >
             {/* Liquidity {sortedColumn === SORT_FIELD.LIQ ? (!sortDirection ? '↑' : '↓') : ''} */}
             Liquidity
@@ -154,10 +154,10 @@ function StrategyList({ pairs, color, disbaleLinks, maxItems = 10 }) {
         <Flex alignItems="center">
           <ClickableText
             area="apy"
-            // onClick={e => {
-            //   setSortedColumn(SORT_FIELD.APY)
-            //   setSortDirection(sortedColumn !== SORT_FIELD.APY ? true : !sortDirection)
-            // }}
+          // onClick={e => {
+          //   setSortedColumn(SORT_FIELD.APY)
+          //   setSortDirection(sortedColumn !== SORT_FIELD.APY ? true : !sortDirection)
+          // }}
           >
             {/* APY {sortedColumn === SORT_FIELD.APY ? (!sortDirection ? '↑' : '↓') : ''} */}
             APY
@@ -168,7 +168,7 @@ function StrategyList({ pairs, color, disbaleLinks, maxItems = 10 }) {
       <List p={0}>
         {strategyList ? strategyList.map((item, index) => (
           <StrategyListItem key={index} item={item} index={index} color={color} disbaleLinks={disbaleLinks} />
-        )) : <LocalLoader /> }
+        )) : <LocalLoader fill="bool" />}
       </List>
       <PageButtons>
         <div

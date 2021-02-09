@@ -167,7 +167,7 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
         </Flex>
       </DashGrid>
       <Divider />
-      <List p={0}>{!lpList ? <LocalLoader /> : lpList}</List>
+      <List p={0}>{!lpList ? <LocalLoader fill="bool" /> : lpList}</List>
       <PageButtons>
         <div onClick={() => setPage(page === 1 ? page : page - 1)}>
           <Arrow faded={page === 1 ? true : false}>←</Arrow>
