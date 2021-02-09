@@ -155,7 +155,7 @@ function AccountPage({ account }) {
       <ContentWrapper>
         <RowBetween>
           <TYPE.body>
-            <BasicLink to="/accounts">{'Accounts '}</BasicLink>→{' '}
+            <BasicLink to="/accounts">{'账户 '}</BasicLink>→{' '}
             <Link lineHeight={'145.23%'} href={'https://scan.hecochain.com/address/' + account} target="_blank">
               {' '}
               {account?.slice(0, 42)}{' '}
