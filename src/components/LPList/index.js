@@ -163,7 +163,7 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
           <TYPE.main area="pair">交易对</TYPE.main>
         </Flex>
         <Flex alignItems="center" justifyContent="flexEnd">
-          <TYPE.main area="value">Value</TYPE.main>
+          <TYPE.main area="value">市值</TYPE.main>
         </Flex>
       </DashGrid>
       <Divider />
