@@ -278,7 +278,7 @@ function PairList({ pairs, color, disbaleLinks, maxItems = 10 }) {
                 setSortDirection(sortedColumn !== SORT_FIELD.APY ? true : !sortDirection)
               }}
             >
-              流动性年化收益 {sortedColumn === SORT_FIELD.APY ? (!sortDirection ? '↑' : '↓') : ''}
+              (手续费/流动性)年化收益 {sortedColumn === SORT_FIELD.APY ? (!sortDirection ? '↑' : '↓') : ''}
             </ClickableText>
             <QuestionHelper text={'按照24小时交易量计算年化'} />
           </Flex>
