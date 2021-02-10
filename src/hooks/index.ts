@@ -9,7 +9,7 @@ import { APY_TYPE_LIST } from '../constants'
 export function useColor(tokenAddress, token) {
   const [color, setColor] = useState('#2172E5')
   if (tokenAddress) {
-    const path = `https://raw.githubusercontent.com/go-protocol/goswap-tokenlist/main/assets/HECOMAIN/${isAddress(
+    const path = `https://unpkg.com/goswap-tokenlist@latest/assets/HECOMAIN/${isAddress(
       tokenAddress
     )}.png`
     if (path) {

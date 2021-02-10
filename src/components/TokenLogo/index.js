@@ -79,7 +79,7 @@ export default function TokenLogo({ address, header = false, size = 24, ...rest 
     )
   }
 
-  let path = `https://raw.githubusercontent.com/go-protocol/goswap-tokenlist/main/assets/HECOMAIN/${isAddress(
+  let path = `https://unpkg.com/goswap-tokenlist@latest/assets/HECOMAIN/${isAddress(
     address
   )}.png`
 
