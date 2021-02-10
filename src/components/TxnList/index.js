@@ -137,10 +137,10 @@ const SORT_FIELD = {
 }
 
 const TXN_TYPE = {
-  ALL: 'All',
-  SWAP: 'Swaps',
-  ADD: 'Adds',
-  REMOVE: 'Removes'
+  ALL: '全部',
+  SWAP: '交换',
+  ADD: '添加',
+  REMOVE: '移除'
 }
 
 const ITEMS_PER_PAGE = 10
@@ -344,7 +344,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
                 }}
                 active={txFilter === TXN_TYPE.SWAP}
               >
-                交易
+                交换
             </SortText>
               <SortText
                 onClick={() => {

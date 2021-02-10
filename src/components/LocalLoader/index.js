@@ -16,25 +16,25 @@ const rotate = keyframes`
 const Loader = styled.div`
   pointer-events: none;
   position:absolute;
-  width:60px;
-  height:60px;
-  margin: 300px auto;
-top:80%;
+  // width:60px;
+  // height:60px;
+  // margin: 300px auto;
+top:50%;
 left:50%;
- @media (max-width: 835px) {
-    left:44%;
-  }
+margin-left: -30px;
   ${props => {
     if (props.fill === "bool") {
       return css`
-      margin: 10px auto;
+      margin-top: -30px;
         `
     } else if (props.fill === "char") {
       return css`
-      margin: -160px auto;
+      // margin: -160px auto;
       `
     } else {
       return css`
+      top:0;
+      margin-top: 25%;
       `
     }
   }
@@ -47,23 +47,23 @@ left:50%;
 const Loadera = styled.div`
   pointer-events: none;
   position:absolute;
-  margin: 300px auto;
-top:80%;
+  // margin: 300px auto;
+top:50%;
 left:50%;
-@media (max-width: 835px) {
- left:44%;
-}
+margin-left: -30px;
 ${props => {
     if (props.fill === "bool") {
       return css`
-    margin: 10px auto;
+      margin-top: -30px;
       `
     } else if (props.fill === "char") {
       return css`
-    margin: -160px auto;
+    // margin: -160px auto;
     `
     } else {
       return css`
+      top:0;
+      margin-top: 25%;
     `
     }
   }
@@ -74,7 +74,8 @@ ${props => {
 const Rotate = styled.div`
 width:100%;
 height:100%;
-position:relative;
+min-height: 100px;
+// position:relative;
 `
 const LocalLoader = ({ fill }) => {
   return (
