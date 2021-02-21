@@ -6,7 +6,7 @@ import {
 
 export const SUBGRAPH_HEALTH = gql`
   query health {
-    indexingStatusForCurrentVersion(subgraphName: "uniscam/swap") {
+    indexingStatusForCurrentVersion(subgraphName: "mdex/swap") {
       synced
       health
       chains {

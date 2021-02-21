@@ -18,7 +18,7 @@ export const client = new ApolloClient({
 
 export const healthClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://subgraph.unisave.exchange/heco/index/graphql',
+    uri: 'https://health.mdex.com/graphql',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
