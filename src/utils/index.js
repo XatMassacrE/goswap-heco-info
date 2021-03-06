@@ -304,10 +304,10 @@ export const setThemeColor = theme => document.documentElement.style.setProperty
 export const Big = number => new BigNumber(number)
 
 export const urls = {
-  showTransaction: tx => `https://scan.hecochain.com/tx/${tx}/`,
-  showAddress: address => `https://scan.hecochain.com/address/${address}/`,
-  showToken: address => `https://scan.hecochain.com/token/${address}/`,
-  showBlock: block => `https://scan.hecochain.com/block/${block}/`
+  showTransaction: tx => `https://hecoinfo.com/tx/${tx}/`,
+  showAddress: address => `https://hecoinfo.com/address/${address}/`,
+  showToken: address => `https://hecoinfo.com/token/${address}/`,
+  showBlock: block => `https://hecoinfo.com/block/${block}/`
 }
 
 export const formatTime = unix => {

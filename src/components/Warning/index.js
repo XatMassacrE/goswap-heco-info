@@ -38,17 +38,17 @@ export default function Warning({ type, show, setShow, address }) {
   const textContent = below800 ? (
     <div>
       <Text fontWeight={500} lineHeight={'145.23%'} mt={'10px'}>
-      任何人都可以在HECO上创建和命名任何Token，包括创建现有Token的伪造版本和声称代表没有Token的项目的Token。
+        任何人都可以在HECO上创建和命名任何Token，包括创建现有Token的伪造版本和声称代表没有Token的项目的Token。
       </Text>
       <Text fontWeight={500} lineHeight={'145.23%'} mt={'10px'}>
-      与HecoScan类似，此站点自动跟踪所有Token的分析，而与Token的诚信无关,与任何Token互动之前，请先进行自己的研究。
+        与HecoScan类似，此站点自动跟踪所有Token的分析，而与Token的诚信无关,与任何Token互动之前，请先进行自己的研究。
       </Text>
     </div>
   ) : (
-    <Text fontWeight={500} lineHeight={'145.23%'} mt={'10px'}>
-      任何人都可以在HECO上创建和命名任何Token，包括创建现有Token的伪造版本和声称代表没有Token的项目的Token。与BscScan类似，与HecoScan类似，此站点自动跟踪所有Token的分析，而与Token的诚信无关,与任何Token互动之前，请先进行自己的研究。
-    </Text>
-  )
+      <Text fontWeight={500} lineHeight={'145.23%'} mt={'10px'}>
+        任何人都可以在HECO上创建和命名任何Token，包括创建现有Token的伪造版本和声称代表没有Token的项目的Token。与BscScan类似，与HecoScan类似，此站点自动跟踪所有Token的分析，而与Token的诚信无关,与任何Token互动之前，请先进行自己的研究。
+      </Text>
+    )
 
   return (
     <WarningWrapper show={show}>
@@ -67,10 +67,10 @@ export default function Warning({ type, show, setShow, address }) {
                 fontWeight={500}
                 lineHeight={'145.23%'}
                 color={'#2172E5'}
-                href={'https://scan.hecochain.com/address/' + address}
+                href={'https://hecoinfo.com/address/' + address}
                 target="_blank"
               >
-                在HecoScan查看 {type === 'token' ? 'token' : 'pair'} 合约 
+                在HecoScan查看 {type === 'token' ? 'token' : 'pair'} 合约
               </Link>
             </Hover>
             <RowBetween style={{ marginTop: '20px' }}>
@@ -81,23 +81,23 @@ export default function Warning({ type, show, setShow, address }) {
             </RowBetween>
           </div>
         ) : (
-          <RowBetween style={{ marginTop: '10px' }}>
-            <Hover>
-              <Link
-                fontWeight={500}
-                lineHeight={'145.23%'}
-                color={'#2172E5'}
-                href={'https://scan.hecochain.com/address/' + address}
-                target="_blank"
-              >
-              在HecoScan查看 {type === 'token' ? 'token' : 'pair'} 合约 
+            <RowBetween style={{ marginTop: '10px' }}>
+              <Hover>
+                <Link
+                  fontWeight={500}
+                  lineHeight={'145.23%'}
+                  color={'#2172E5'}
+                  href={'https://hecoinfo.com/address/' + address}
+                  target="_blank"
+                >
+                  在HecoScan查看 {type === 'token' ? 'token' : 'pair'} 合约
               </Link>
-            </Hover>
-            <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
-            我明白了
+              </Hover>
+              <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
+                我明白了
             </ButtonDark>
-          </RowBetween>
-        )}
+            </RowBetween>
+          )}
       </AutoColumn>
     </WarningWrapper>
   )
